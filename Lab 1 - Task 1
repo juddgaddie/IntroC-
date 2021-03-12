@@ -1,0 +1,22 @@
+#include <iostream> //cout;fixed
+#include <iomanip>   //setprecision 
+//1924564
+//Date: 12/03/2021
+//Program determines and outputs the actual space displayed on a computer
+//Using the advertised space as an input
+using namespace std;
+int main() {
+    double manGb;
+    cout << "Enter the amount of space in Gb advertised by the manufacturer" << endl;
+    cin >> manGb; //input of manufacturer GB
+    double manByte = manGb*1000*1000*1000; //manufacturer bytes
+    double realByte = manGb*1024*1024*1024; //real value of bytes 
+    double diff = realByte - manByte; // difference in bytes
+    double diffGb = diff/(1024*1024*1024);// difference in Gb
+    double actGb = manGb - diffGb; //actual space displayed on computer
+  
+    cout << "The real amount of space in Gb is " ;
+  std::cout<< std::fixed;//fixes the deicmals place specified so that the program does not drop 0's
+  std::cout<< std::setprecision(2) <<actGb; //sets precision of decimals to 2
+    return 0;
+}
